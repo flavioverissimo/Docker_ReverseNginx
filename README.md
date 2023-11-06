@@ -1,4 +1,4 @@
-<p align="center">Nginx Reverso to access nodejs application!<p align="center">
+<p align="center">Reverse Nginx to access nodejs application!<p align="center">
 
 ## Description
 
