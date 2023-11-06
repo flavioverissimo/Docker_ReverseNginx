@@ -25,7 +25,7 @@ $ docker run --name nginx -p 8080:80 --network netproject -d flavioverissimo/ngi
 
 Second Option
 
-You only need to make docker-compose.yaml download and execute:
+You just need to download docker-compose.yaml and run:
 
 ```bash
 # Running docker-compose.yaml
