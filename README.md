@@ -19,6 +19,9 @@ To use this application you need to install Docker
 First Option
 
 ```bash
+# Creating network
+$ docker network create netproject --driver bridge
+
 # Creating MySQL container
 $ docker run --name database -e MYSQL_ROOT_PASSWORD=mysql -e MYSQL_DATABASE=devproject --network netproject -d mysql:8.2.0
 
