@@ -1,0 +1,4 @@
+/nginx/node_modules
+/nginx/next
+
+npm-debug.log

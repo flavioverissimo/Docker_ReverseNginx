@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  nginx:
+    image: flavioverissimo/nginx:latest
+    container_name: nginx
+    networks:
+      - netproject
+    tty: true
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - nodejs
+
+  nodejs:
+    image: flavioverissimo/nodejs:latest
+    container_name: nodejs
+    networks:
+      - netproject
+    tty: true
+    restart: always
+    working_dir: /usr/src/app
+    command: npm run dev
+    depends_on:
+      - database
+
+  database:
+    image: mysql:8.2.0
+    command: --innodb-use-native-aio=0
+    container_name: database
+    restart: always
+    tty: true
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql
+      - MYSQL_DATABASE=devproject
+    networks:
+      - netproject
+
+networks:
+  netproject:
+    driver: bridge
