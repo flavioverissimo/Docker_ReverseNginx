@@ -10,9 +10,9 @@ To use this application you need to install Docker
 
 ## Docker Repository
 
-[My Repository](https://hub.docker.com/u/flavioverissimo)
-[My Nginx Image](https://hub.docker.com/r/flavioverissimo/nginx)
-[My NodeJS Image](https://hub.docker.com/r/flavioverissimo/nodejs)
+- [My Repository](https://hub.docker.com/u/flavioverissimo)
+- [My Nginx Image](https://hub.docker.com/r/flavioverissimo/nginx)
+- [My NodeJS Image](https://hub.docker.com/r/flavioverissimo/nodejs)
 
 ## Running the application
 
