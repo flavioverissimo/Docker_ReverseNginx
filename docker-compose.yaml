@@ -2,26 +2,34 @@ version: '3'
 
 services:
   nginx:
-    image: flavioverissimo/nginx:latest
+    build: 
+      context: ./
+      dockerfile: Dockerfile.nginx
+    image: nginx:latest
     container_name: nginx
-    networks:
-      - netproject
     tty: true
     restart: always
     ports:
       - "8080:80"
+    networks:
+      - netproject
     depends_on:
       - nodejs
 
   nodejs:
-    image: flavioverissimo/nodejs:latest
+    build: 
+      context: ./
+      dockerfile: Dockerfile.nodejs
+    image: nodejs:latest
     container_name: nodejs
-    networks:
-      - netproject
+    volumes:
+      - ./nginx:/usr/src/app
     tty: true
     restart: always
     working_dir: /usr/src/app
     command: npm run dev
+    networks:
+      - netproject
     depends_on:
       - database
 
