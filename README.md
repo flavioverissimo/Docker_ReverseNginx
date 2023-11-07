@@ -1,4 +1,4 @@
-<p align="center">Nginx Reverso to access nodejs application!<p align="center">
+<p align="center">Reverse Nginx to access nodejs application!<p align="center">
 
 ## Description
 
@@ -8,11 +8,20 @@ Application development using MySQL, Nodejs and Nginx. The objective was to crea
 
 To use this application you need to install Docker
 
+## Docker Repository
+
+- [My Repository](https://hub.docker.com/u/flavioverissimo)
+- [My Nginx Image](https://hub.docker.com/r/flavioverissimo/nginx)
+- [My NodeJS Image](https://hub.docker.com/r/flavioverissimo/nodejs)
+
 ## Running the application
 
 First Option
 
 ```bash
+# Creating network
+$ docker network create netproject --driver bridge
+
 # Creating MySQL container
 $ docker run --name database -e MYSQL_ROOT_PASSWORD=mysql -e MYSQL_DATABASE=devproject --network netproject -d mysql:8.2.0
 
@@ -25,7 +34,7 @@ $ docker run --name nginx -p 8080:80 --network netproject -d flavioverissimo/ngi
 
 Second Option
 
-You only need to make docker-compose.yaml download and execute:
+You just need to download docker-compose.yaml and run:
 
 ```bash
 # Running docker-compose.yaml
