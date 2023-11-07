@@ -23,7 +23,7 @@ services:
     image: nodejs:latest
     container_name: nodejs
     volumes:
-      - /nginx
+      - /files
     tty: true
     restart: always
     working_dir: /usr/src/app
