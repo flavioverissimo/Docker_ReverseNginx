@@ -23,11 +23,11 @@ services:
     image: nodejs:latest
     container_name: nodejs
     volumes:
-      - /files
+      - ./nginx:/usr/src/app
     tty: true
     restart: always
-    working_dir: /usr/src/app
-    command: npm run dev
+    ports:
+      - "3000:3000"
     networks:
       - netproject
     depends_on:
@@ -42,8 +42,11 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=mysql
       - MYSQL_DATABASE=devproject
+    ports:
+      - "3001:3306"
     networks:
       - netproject
+    
 
 networks:
   netproject:

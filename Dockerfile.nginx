@@ -16,4 +16,4 @@ EXPOSE 80
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-CMD ["dockerize", "-wait", "tcp://nodejs:3000", "-timeout", "20s", "nginx", "-g", "daemon off;"]
+CMD ["dockerize", "-wait", "tcp://nodejs:3000", "-timeout", "30s", "nginx", "-g", "daemon off;"]
